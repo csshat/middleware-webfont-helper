@@ -21,6 +21,16 @@ describe 'Webfont Helper middleware', ->
     runs ->
       expect(layer).toEqual { notifications: [] }
 
+  it 'should do nothing when font name is missing', ->
+    layer.baseTextStyle = font: foo: 'bar'
+    middleware(layer, { enableTypekit: true, enableGoogleFonts: true }, next)
+
+    waitsFor ->
+      next.callCount > 0
+
+    runs ->
+      expect(layer.notifications.length).toEqual 0
+
   it 'should find typekit font', ->
     layer.baseTextStyle = font: name: 'Proxima Nova'
     middleware(layer, { enableTypekit: true, enableGoogleFonts: false }, next)

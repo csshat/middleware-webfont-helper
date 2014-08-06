@@ -13,7 +13,7 @@ matchFontInLibraries = (name, libraries) ->
   return [false, null, null]
 
 module.exports = (layer, settings, next) ->
-  if layer.baseTextStyle?
+  if layer.baseTextStyle?.font?.name?
     libraries = []
     if settings.enableTypekit
       libraries.push typekit
