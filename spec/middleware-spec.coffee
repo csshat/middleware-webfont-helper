@@ -31,6 +31,16 @@ describe 'Webfont Helper middleware', ->
     runs ->
       expect(layer.notifications.length).toEqual 1
 
+  it 'should find typekit font by removing spaces', ->
+    layer.baseTextStyle = font: name: 'TisaPro'
+    middleware(layer, { enableTypekit: true, enableGoogleFonts: false }, next)
+
+    waitsFor ->
+      next.callCount > 0
+
+    runs ->
+      expect(layer.notifications.length).toEqual 1
+
   it 'should normalize typekit font name', ->
     layer.baseTextStyle = font: name: 'Proxima Nova'
     middleware(layer, { enableTypekit: true, enableGoogleFonts: false }, next)

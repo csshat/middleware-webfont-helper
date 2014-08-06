@@ -1,9 +1,13 @@
 google = require '../fonts/google'
 typekit = require '../fonts/typekit'
 
+normalize = (str) ->
+  str.toLowerCase().replace ' ', ''
+
 matchFontInLibraries = (name, libraries) ->
+  normalizedName = normalize(name)
   for library in libraries
-    if name in library.getNames()
+    for font in library.getNames() when name is font or normalizedName.indexOf(normalize(font)) or normalize(font).indexOf(normalizedName)
       return [true, library, name]
 
   return [false, null, null]
