@@ -1,0 +1,31 @@
+{
+  "name": "webfont-helper",
+  "title": "Webfont Helper",
+  "main": "lib/middleware.coffee",
+  "description": "Tries to match your font to webfont services and provide you a link",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marekhrabe/webfont-helper"
+  },
+  "bugs": {
+    "url": "https://github.com/marekhrabe/webfont-helper/issues"
+  },
+  "settings": {
+    "enableTypekit": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableGoogleFonts": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "author": "Marek Hrabe <marekhrabe@abdoc.net> (https://github.com/marekhrabe)",
+  "license": "MIT",
+  "enigines": {
+    "csshat": ">2.0.0"
+  },
+  "scripts": {
+    "test": "jasmine-node spec --coffee"
+  }
+}
