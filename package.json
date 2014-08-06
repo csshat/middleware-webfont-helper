@@ -1,5 +1,6 @@
 {
   "name": "webfont-helper",
+  "version": "1.0.0",
   "title": "Webfont Helper",
   "main": "lib/middleware.coffee",
   "description": "Tries to match your font to webfont services and provide you a link",
