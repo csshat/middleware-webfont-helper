@@ -70,3 +70,16 @@ describe 'Webfont Helper middleware', ->
 
     runs ->
       expect(layer.notifications.length).toEqual 1
+
+  it 'should look for fonts in additional text styles', ->
+    layer.baseTextStyle = font: name: 'Droid Sans'
+    layer.textStyles = [
+      font: name: 'Proxima Nova'
+    ]
+    middleware(layer, { enableTypekit: true, enableGoogleFonts: true }, next)
+
+    waitsFor ->
+      next.callCount > 0
+
+    runs ->
+      expect(layer.notifications.length).toEqual 2
