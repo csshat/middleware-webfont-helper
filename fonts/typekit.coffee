@@ -4,7 +4,7 @@ module.exports =
   getLink: (name) ->
     "https://typekit.com/fonts/#{families[name]}"
   normalizeName: (name) ->
-    name.toLowerCase().replace(' ', '-')
+    name.toLowerCase().replace(/( )/g, '-')
 
 # curl -s "https://typekit.com/api/v1/json/libraries/full?per_page=500&page=1" | json -u -o library.families name id
 families =
