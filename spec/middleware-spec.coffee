@@ -72,7 +72,6 @@ describe 'Webfont Helper middleware', ->
       expect(layer.notifications.length).toEqual 1
 
   it 'should look for fonts in additional text styles', ->
-    layer.baseTextStyle = font: name: 'Droid Sans'
     layer.textStyles = [
       font: name: 'Proxima Nova'
     ]
@@ -82,4 +81,16 @@ describe 'Webfont Helper middleware', ->
       next.callCount > 0
 
     runs ->
-      expect(layer.notifications.length).toEqual 2
+      expect(layer.notifications.length).toEqual 1
+
+  it 'should ignore additional text styles when they have no font property defined', ->
+    layer.textStyles = [
+      foo: bar: 'baz'
+    ]
+    middleware(layer, { enableTypekit: true, enableGoogleFonts: true }, next)
+
+    waitsFor ->
+      next.callCount > 0
+
+    runs ->
+      expect(layer.notifications.length).toEqual 0

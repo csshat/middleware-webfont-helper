@@ -18,20 +18,20 @@ processFontObject = (font, libraries, layer) ->
     [found, library, name] = matchFontInLibraries font.name, libraries
 
     if found
-      layer.baseTextStyle.font.name = library.normalizeName name
+      font.name = library.normalizeName name
       layer.notifications.push "Webfont found: #{library.getLink(name)}"
 
 module.exports = (layer, settings, next) ->
-  if layer.baseTextStyle?
+  if layer.baseTextStyle? or layer.textStyles?.length
     libraries = []
     if settings.enableTypekit
       libraries.push typekit
     if settings.enableGoogleFonts
       libraries.push google
 
-    if layer.baseTextStyle.font?.name
+    if layer.baseTextStyle?.font?.name?
       processFontObject layer.baseTextStyle.font, libraries, layer
 
-    processFontObject(style.font, libraries, layer) for style in layer.textStyles if layer.textStyles?.length
+    processFontObject(style.font, libraries, layer) for style in layer.textStyles when style?.font? if layer.textStyles?.length
 
   next()
