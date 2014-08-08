@@ -19,7 +19,10 @@ processFontObject = (font, libraries, layer) ->
 
     if found
       font.name = library.normalizeName name
-      layer.notifications.push "Webfont found: #{library.getLink(name)}"
+      layer.notifications.push
+        content: "Webfont found: #{library.getLink(name)}"
+        dismiss: 'document'
+        icon: if library.icon? then library.icon else null
 
 module.exports = (layer, settings, next) ->
   if layer.baseTextStyle? or layer.textStyles?.length

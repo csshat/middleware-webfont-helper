@@ -1,8 +1,9 @@
 module.exports =
+  icon: 'icons/google.svg'
   getNames: ->
     families
   getLink: (name) ->
-    "https://www.google.com/fonts#UsePlace:use/Collection:#{name}"
+    "https://www.google.com/fonts#UsePlace:use/Collection:#{name.replace(/( )/g, '+')}"
   normalizeName: (name) ->
     name
 
