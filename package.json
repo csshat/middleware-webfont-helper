@@ -4,6 +4,7 @@
   "title": "Webfont Helper",
   "main": "lib/middleware.coffee",
   "description": "Tries to match your font to webfont services and provide you a link",
+  "homepage": "https://github.com/marekhrabe/webfont-helper",
   "repository": {
     "type": "git",
     "url": "https://github.com/marekhrabe/webfont-helper"
