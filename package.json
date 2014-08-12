@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "title": "Webfont Helper",
   "main": "lib/middleware.coffee",
-  "description": "Tries to match your font to webfont services and provide you a link",
-  "homepage": "https://github.com/marekhrabe/webfont-helper",
+  "description": "Tries to match your font to various webfont services and provide you with a link to use it",
+  "homepage": "https://github.com/csshat/middleware-webfont-helper",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marekhrabe/webfont-helper"
+    "url": "https://github.com/csshat/middleware-webfont-helper"
   },
   "bugs": {
-    "url": "https://github.com/marekhrabe/webfont-helper/issues"
+    "url": "https://github.com/csshat/middleware-webfont-helper/issues"
   },
   "settings": {
     "enableTypekit": {
