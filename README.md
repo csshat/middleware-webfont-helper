@@ -1,8 +1,8 @@
 # Webfont Helper
 
-[![Build Status](https://travis-ci.org/marekhrabe/webfont-helper.svg?branch=master)](https://travis-ci.org/marekhrabe/webfont-helper)
+[![Install in CSS Hat](http://img.shields.io/badge/install-to%20CSS%20Hat-blue.svg)](http://addons.csshat.com/?install=csshat/language-less-lesshat) [![Build Status](https://travis-ci.org/marekhrabe/webfont-helper.svg?branch=master)](https://travis-ci.org/marekhrabe/webfont-helper)
 
-Tries to match your font to webfont services and provide you with a link.
+This is a middleware for [CSS Hat 2](https://csshat.com/) tries to match your font to various webfont services and provide you with a link to easily use it on your own page.
 
 ## Currently supported providers:
 
