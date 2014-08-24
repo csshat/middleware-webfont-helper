@@ -24,7 +24,7 @@
   },
   "author": "Marek Hrabe <marekhrabe@abdoc.net> (https://github.com/marekhrabe)",
   "license": "MIT",
-  "enigines": {
+  "engines": {
     "csshat": ">2.0.0"
   },
   "scripts": {
